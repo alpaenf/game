@@ -85,9 +85,9 @@ export default function PSGrid() {
 
   if (units.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center h-64 bg-surface rounded-2xl border border-gray-800 border-dashed">
-        <p className="text-gray-400">Belum ada unit PlayStation yang ditambahkan.</p>
-        <p className="text-sm text-gray-500">Minta Admin untuk menambahkan di menu Pengaturan.</p>
+      <div className="flex flex-col items-center justify-center h-64 bg-surface rounded-2xl border border-gray-200 dark:border-gray-200 dark:border-gray-800 border-dashed">
+        <p className="text-gray-600 dark:text-gray-400">Belum ada unit PlayStation yang ditambahkan.</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Minta Admin untuk menambahkan di menu Pengaturan.</p>
       </div>
     );
   }
@@ -98,7 +98,7 @@ export default function PSGrid() {
       <div className="flex justify-end">
         <button 
            onClick={() => setShowQuickModal(true)}
-           className="flex items-center gap-2 bg-gray-900 border border-gray-700 hover:border-gray-500 text-gray-200 text-sm font-medium px-4 py-2.5 rounded-lg transition-all"
+           className="flex items-center gap-2 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-gray-500 text-gray-800 dark:text-gray-200 text-sm font-medium px-4 py-2.5 rounded-lg transition-all"
         >
           <Zap className="w-4 h-4 text-yellow-500" />
           Buat Struk Cepat (Offline/Manual)
@@ -108,25 +108,25 @@ export default function PSGrid() {
       {/* Quick Manual Modal */}
       {showQuickModal && (
         <div className="fixed inset-0 bg-black/70 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-surface border border-gray-800 p-6 rounded-2xl w-full max-w-sm shadow-xl">
+          <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 p-6 rounded-2xl w-full max-w-sm shadow-xl">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-yellow-500" /> Struk Instan
               </h3>
-              <button onClick={() => setShowQuickModal(false)} className="text-gray-500 hover:text-white bg-gray-800/50 hover:bg-gray-800 rounded p-1">
+              <button onClick={() => setShowQuickModal(false)} className="text-gray-500 dark:text-gray-400 hover:text-text-main bg-gray-200/50 dark:bg-gray-200/ dark:bg-gray-800/ hover:bg-gray-200 dark:bg-gray-800 rounded p-1">
                 <X className="w-5 h-5" />
               </button>
             </div>
             
-            <p className="text-xs text-gray-400 mb-6">Gunakan fitur ini jika pelanggan sudah selesai main tetapi Anda <strong>lupa</strong> menekan tombol Start.</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mb-6">Gunakan fitur ini jika pelanggan sudah selesai main tetapi Anda <strong>lupa</strong> menekan tombol Start.</p>
             
             <div className="space-y-4 mb-8">
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">Pilih TV/PS (Khusus yang kosong)</label>
+                <label className="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1.5">Pilih TV/PS (Khusus yang kosong)</label>
                 <select 
                   value={quickPsId}
                   onChange={(e) => setQuickPsId(e.target.value)}
-                  className="w-full bg-background border border-gray-700 rounded-lg p-2.5 text-sm text-white focus:border-primary outline-none focus:ring-1 focus:ring-primary"
+                  className="w-full bg-background border border-gray-300 dark:border-gray-700 rounded-lg p-2.5 text-sm text-text-main focus:border-primary outline-none focus:ring-1 focus:ring-primary"
                 >
                   <option value="" disabled>-- Pilih Stasiun PS --</option>
                   {units.filter(u => u.status !== 'in_use').map(u => (
@@ -136,18 +136,18 @@ export default function PSGrid() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1.5">Durasi Permainan (Menit)</label>
+                <label className="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1.5">Durasi Permainan (Menit)</label>
                 <div className="flex items-center gap-3">
                    <input 
                      type="number"
                      min="1"
                      value={quickDuration}
                      onChange={(e) => setQuickDuration(Number(e.target.value))}
-                     className="w-full bg-background border border-gray-700 rounded-lg p-2.5 text-sm text-white focus:border-primary outline-none focus:ring-1 focus:ring-primary"
+                     className="w-full bg-background border border-gray-300 dark:border-gray-700 rounded-lg p-2.5 text-sm text-text-main focus:border-primary outline-none focus:ring-1 focus:ring-primary"
                    />
-                   <span className="text-sm text-gray-500">Menit</span>
+                   <span className="text-sm text-gray-500 dark:text-gray-400">Menit</span>
                 </div>
-                <p className="text-[10px] text-gray-500 mt-1 italic">*contoh: 2 jam = 120 menit</p>
+                <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-1 italic">*contoh: 2 jam = 120 menit</p>
               </div>
             </div>
 
@@ -174,24 +174,24 @@ export default function PSGrid() {
       {/* Time Modal */}
       {showTimeModal && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-surface border border-gray-800 p-6 rounded-xl w-full max-w-sm shadow-xl">
+          <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 p-6 rounded-xl w-full max-w-sm shadow-xl">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold text-gray-100">Set Waktu Mulai</h3>
-              <button onClick={() => setShowTimeModal(null)} className="text-gray-500 hover:text-white">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Set Waktu Mulai</h3>
+              <button onClick={() => setShowTimeModal(null)} className="text-gray-500 dark:text-gray-400 hover:text-text-main">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-xs text-gray-400 mb-4">Kosongkan jika ingin menggunakan waktu saat ini secara otomatis.</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">Kosongkan jika ingin menggunakan waktu saat ini secara otomatis.</p>
             <input 
               type="datetime-local"
-              className="w-full bg-background border border-gray-700 rounded-md p-2 text-sm text-white focus:border-primary outline-none focus:ring-1 focus:ring-primary mb-6"
+              className="w-full bg-background border border-gray-300 dark:border-gray-700 rounded-md p-2 text-sm text-text-main focus:border-primary outline-none focus:ring-1 focus:ring-primary mb-6"
               value={customStartTime}
               onChange={(e) => setCustomStartTime(e.target.value)}
             />
             <div className="flex gap-3">
                <button 
                   onClick={() => setShowTimeModal(null)}
-                  className="flex-1 py-2 text-sm text-gray-300 hover:bg-gray-800 rounded-md border border-gray-700 transition-colors"
+                  className="flex-1 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:bg-gray-800 rounded-md border border-gray-300 dark:border-gray-700 transition-colors"
                >
                  Batal
                </button>
@@ -215,7 +215,7 @@ export default function PSGrid() {
               key={unit.id}
               className={cn(
                 "bg-surface rounded-xl p-5 relative transition-all duration-200 border",
-                isActive ? "border-primary/50" : "border-gray-800"
+                isActive ? "border-primary/50" : "border-gray-200 dark:border-gray-200 dark:border-gray-800"
               )}
             >
             {/* Minimalist Top Indicator */}
@@ -227,12 +227,12 @@ export default function PSGrid() {
             <div className="flex justify-between items-start mb-6">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-lg font-semibold text-gray-100">{unit.name}</h3>
-                  <span className="px-1.5 py-0.5 text-[10px] font-medium rounded border border-gray-700 text-gray-400">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{unit.name}</h3>
+                  <span className="px-1.5 py-0.5 text-[10px] font-medium rounded border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400">
                     {unit.type}
                   </span>
                 </div>
-                <p className="text-xs text-gray-500 font-mono">{formatRupiah(unit.hourly_rate)}/h</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 font-mono">{formatRupiah(unit.hourly_rate)}/h</p>
               </div>
 
               <div
@@ -240,7 +240,7 @@ export default function PSGrid() {
                   "flex items-center gap-1.5 px-2 py-1 rounded text-[10px] uppercase tracking-wider font-semibold",
                   isActive
                     ? "text-primary bg-primary/10"
-                    : "text-gray-500 bg-gray-800/50"
+                    : "text-gray-500 dark:text-gray-400 bg-gray-200/50 dark:bg-gray-200/ dark:bg-gray-800/"
                 )}
               >
                 {isActive && <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>}
@@ -266,7 +266,7 @@ export default function PSGrid() {
                 <button
                   onClick={() => setShowTimeModal(unit.id)}
                   disabled={actionLoading === unit.id}
-                  className="flex-1 py-2 text-sm font-medium rounded-md transition-all border disabled:opacity-50 disabled:cursor-not-allowed border-gray-700 text-gray-300 hover:bg-gray-100/5 hover:border-gray-500 flex justify-center items-center gap-2"
+                  className="flex-1 py-2 text-sm font-medium rounded-md transition-all border disabled:opacity-50 disabled:cursor-not-allowed border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100/5 hover:border-gray-500 flex justify-center items-center gap-2"
                 >
                   {actionLoading === unit.id ? (
                       <span className="animate-spin h-4 w-4 border-2 border-gray-400 border-t-transparent rounded-full" />

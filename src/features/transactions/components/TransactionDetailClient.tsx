@@ -53,7 +53,7 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
     }
   }, [data, elapsedSeconds]); // Every second roughly updates cost but we can throttle if needed.
 
-  if (loading) return <div className="p-10 text-center animate-pulse text-white">Memuat...</div>;
+  if (loading) return <div className="p-10 text-center animate-pulse text-text-main">Memuat...</div>;
   if (!data) return null;
 
   const psUnit = Array.isArray(data.ps_units) ? data.ps_units[0] : data.ps_units;
@@ -93,48 +93,48 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
     <div className="max-w-4xl mx-auto space-y-6">
       <button 
         onClick={() => router.push("/dashboard")}
-        className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+        className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-text-main transition-colors"
       >
         <ChevronLeft className="w-5 h-5" /> Kembali
       </button>
 
       {/* HEADER CARD */}
-      <div className="bg-surface border border-gray-800 rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <h1 className="text-xl font-semibold text-gray-100">{psUnit.name}</h1>
-            <span className="px-2 py-0.5 bg-gray-900 border border-gray-700 rounded text-[10px] font-medium text-gray-400 uppercase tracking-wider">
+            <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{psUnit.name}</h1>
+            <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded text-[10px] font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
               {psUnit.type}
             </span>
-            <span className={`px-2 py-0.5 rounded text-[10px] font-medium border ${isCompleted ? 'bg-gray-800 text-gray-400 border-gray-700' : 'bg-primary/10 text-primary border-primary/20'}`}>
+            <span className={`px-2 py-0.5 rounded text-[10px] font-medium border ${isCompleted ? 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-700' : 'bg-primary/10 text-primary border-primary/20'}`}>
               {isCompleted ? "SELESAI" : "BERJALAN"}
             </span>
           </div>
-          <p className="text-xs text-gray-500 font-mono">Tarif: {formatRupiah(psUnit.hourly_rate)}/h</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 font-mono">Tarif: {formatRupiah(psUnit.hourly_rate)}/h</p>
         </div>
 
         <div className="text-left md:text-right w-full md:w-auto">
-          <p className="text-xs text-gray-500 mb-1 uppercase tracking-widest">Total Tagihan Sementara</p>
-          <div className="text-3xl font-mono text-gray-100 font-medium">{formatRupiah(totalCost)}</div>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-widest">Total Tagihan Sementara</p>
+          <div className="text-3xl font-mono text-gray-900 dark:text-gray-100 font-medium">{formatRupiah(totalCost)}</div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* TIMER SECTION */}
-        <div className="bg-surface rounded-2xl p-6 border border-gray-800 shadow-lg flex flex-col items-center justify-center min-h-[250px]">
+        <div className="bg-surface rounded-2xl p-6 border border-gray-200 dark:border-gray-200 dark:border-gray-800 shadow-lg flex flex-col items-center justify-center min-h-[250px]">
            <Clock className={`w-12 h-12 mb-4 ${isCompleted ? 'text-green-500' : 'text-secondary animate-pulse'}`} />
-           <div className="text-5xl font-mono tracking-wider font-bold text-white mb-4">
+           <div className="text-5xl font-mono tracking-wider font-bold text-text-main mb-4">
               {isCompleted ? "DONE" : formattedTimer}
            </div>
-           <div className="text-xl font-semibold text-gray-400">
+           <div className="text-xl font-semibold text-gray-600 dark:text-gray-400">
               Biaya PS: <span className="text-green-400">{formatRupiah(billingPSFinal)}</span>
            </div>
         </div>
 
         {/* ITEMS SECTION */}
-        <div className="bg-surface rounded-2xl p-6 border border-gray-800 shadow-lg flex flex-col max-h-[400px]">
-          <div className="flex justify-between items-center mb-4 pb-4 border-b border-gray-800">
-            <h3 className="text-lg font-bold text-white">Tambahan Produk</h3>
+        <div className="bg-surface rounded-2xl p-6 border border-gray-200 dark:border-gray-200 dark:border-gray-800 shadow-lg flex flex-col max-h-[400px]">
+          <div className="flex justify-between items-center mb-4 pb-4 border-b border-gray-200 dark:border-gray-200 dark:border-gray-800">
+            <h3 className="text-lg font-bold text-text-main">Tambahan Produk</h3>
             {!isCompleted && (
               <button 
                 onClick={() => setIsModalOpen(true)}
@@ -147,13 +147,13 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
 
           <div className="flex-1 overflow-y-auto space-y-3 pr-2">
             {data.transaction_items.length === 0 ? (
-              <div className="text-center text-gray-500 mt-10 italic">Belum ada pesanan produk.</div>
+              <div className="text-center text-gray-500 dark:text-gray-400 mt-10 italic">Belum ada pesanan produk.</div>
             ) : (
               data.transaction_items.map((item: any) => (
-                <div key={item.id} className="flex justify-between items-center bg-background p-3 rounded-lg border border-gray-800">
+                <div key={item.id} className="flex justify-between items-center bg-background p-3 rounded-lg border border-gray-200 dark:border-gray-200 dark:border-gray-800">
                   <div>
-                    <div className="font-semibold text-white">{item.product_name}</div>
-                    <div className="text-xs text-gray-400">
+                    <div className="font-semibold text-text-main">{item.product_name}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
                       {item.qty} x {formatRupiah(item.price)}
                     </div>
                   </div>
@@ -170,9 +170,9 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
             )}
           </div>
           
-          <div className="mt-4 pt-4 border-t border-gray-800 flex justify-between font-bold">
-            <span className="text-gray-400">Subtotal Produk</span>
-            <span className="text-white">{formatRupiah(itemsTotal)}</span>
+          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-200 dark:border-gray-800 flex justify-between font-bold">
+            <span className="text-gray-600 dark:text-gray-400">Subtotal Produk</span>
+            <span className="text-text-main">{formatRupiah(itemsTotal)}</span>
           </div>
         </div>
       </div>

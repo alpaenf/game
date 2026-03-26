@@ -65,32 +65,32 @@ export default function AddProductModal({ txId, onClose, onSuccess }: ModalProps
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-surface border border-gray-800 rounded-2xl p-6 w-full max-w-md shadow-2xl relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 dark:bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-2xl p-6 w-full max-w-md shadow-2xl relative">
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-text-main transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <h2 className="text-xl font-bold text-white mb-6">Tambah Tambahan Produk</h2>
+        <h2 className="text-xl font-bold text-text-main mb-6">Tambah Tambahan Produk</h2>
 
         {products.length === 0 ? (
-          <div className="text-center text-gray-500 py-4">
+          <div className="text-center text-gray-500 dark:text-gray-400 py-4">
              Tidak ada produk tersedia / stok habis.<br/>
              <span className="text-sm">Minta admin mengecek master produk.</span>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1">
+              <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
                 Pilih Produk
               </label>
               <select
                 value={selectedProduct}
                 onChange={(e) => setSelectedProduct(e.target.value)}
-                className="w-full bg-background border border-gray-700 text-white rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                className="w-full bg-background border border-gray-300 dark:border-gray-700 text-text-main rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
               >
                 {products.map((p) => (
                   <option key={p.id} value={p.id}>
@@ -101,7 +101,7 @@ export default function AddProductModal({ txId, onClose, onSuccess }: ModalProps
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1">
+              <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
                 Kuantitas (Qty)
               </label>
               <input
@@ -109,7 +109,7 @@ export default function AddProductModal({ txId, onClose, onSuccess }: ModalProps
                 min="1"
                 value={qty}
                 onChange={(e) => setQty(Number(e.target.value))}
-                className="w-full bg-background border border-gray-700 text-white rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                className="w-full bg-background border border-gray-300 dark:border-gray-700 text-text-main rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
               />
             </div>
 

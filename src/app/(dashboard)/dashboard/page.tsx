@@ -5,8 +5,8 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Monitor Area PS</h1>
-          <p className="text-gray-400">Pusat kontrol stasiun PlayStation dengan real-time timer.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-text-main mb-2">Monitor Area PS</h1>
+          <p className="text-gray-600 dark:text-gray-400">Pusat kontrol stasiun PlayStation dengan real-time timer.</p>
         </div>
       </div>
       

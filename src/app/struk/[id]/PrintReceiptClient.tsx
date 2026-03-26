@@ -141,10 +141,10 @@ export default function PrintReceiptClient({ transaction }: PrintReceiptClientPr
       `}} />
 
       {/* Kontrol Menu untuk layar Desktop & Mobile */}
-      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-900 border-t border-gray-800 flex flex-col md:flex-row justify-center items-center gap-3 no-print z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-center items-center gap-3 no-print z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
          <button 
            onClick={() => window.location.href = '/dashboard'}
-           className="w-full md:w-auto px-6 py-3 bg-gray-800 text-white font-medium rounded-xl shadow hover:bg-gray-700 transition"
+           className="w-full md:w-auto px-6 py-3 bg-gray-200 dark:bg-gray-800 text-text-main font-medium rounded-xl shadow hover:bg-gray-300 dark:hover:bg-gray-200 dark:bg-gray-700 transition"
          >
            Kembali ke Dashboard
          </button>
@@ -174,14 +174,14 @@ Terima kasih telah bermain di tempat kami!`;
               const encodedText = encodeURIComponent(waText);
               window.open(`https://wa.me/?text=${encodedText}`, '_blank');
            }}
-           className="w-full md:w-auto px-6 py-3 flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold rounded-xl shadow-lg hover:bg-[#20b858] transition"
+           className="w-full md:w-auto px-6 py-3 flex items-center justify-center gap-2 bg-[#25D366] text-text-main font-bold rounded-xl shadow-lg hover:bg-[#20b858] transition"
          >
            Kirim Teks ke WA
          </button>
 
          <button 
            onClick={() => window.print()}
-           className="w-full md:w-auto px-6 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:bg-blue-500 transition"
+           className="w-full md:w-auto px-6 py-3 bg-blue-600 text-text-main font-bold rounded-xl shadow-lg hover:bg-blue-500 transition"
          >
            Cetak / Simpan PDF
          </button>
