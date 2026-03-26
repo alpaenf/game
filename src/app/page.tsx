@@ -131,7 +131,7 @@ export default async function LandingPage() {
       </div>
 
       {/* Features Bento Grid */}
-      <section id="fitur" className="relative z-10 bg-gray-900/40 dark:bg-black/40 border-y border-gray-200 dark:border-gray-800/50 backdrop-blur-lg py-20 md:py-32">
+      <section id="fitur" className="relative z-10 bg-white dark:bg-black/40 border-y border-gray-200 dark:border-gray-800/50 backdrop-blur-lg py-20 md:py-32">
          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <AnimatedSection direction="up">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 tracking-tight">Kekuatan di Tangan Anda</h2>
@@ -309,8 +309,8 @@ export default async function LandingPage() {
         <div className="max-w-5xl mx-auto px-4 md:px-6">
           <AnimatedSection direction="up">
 
-          <div className="bg-gradient-to-r from-green-900/40 via-primary/20 to-green-900/40 border border-primary/30 rounded-3xl md:rounded-[2.5rem] p-8 md:p-12 text-center backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xTTEwIDBIMUMwIDEweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==')] opacity-20 pointer-events-none" />
+          <div className="bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-gray-800 rounded-3xl md:rounded-[2.5rem] p-8 md:p-12 text-center relative overflow-hidden shadow-xl dark:shadow-none">
+            <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xTTEwIDBIMUMwIDEweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==')] opacity-10 dark:opacity-20 pointer-events-none" />
             <h2 className="text-3xl md:text-5xl font-bold text-text-main mb-4 md:mb-6 relative z-10 leading-tight">
               Siap Mengubah Cara Anda <br className="hidden md:block" />Mengelola Rental PS?
             </h2>
