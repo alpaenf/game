@@ -141,7 +141,7 @@ export default function PrintReceiptClient({ transaction }: PrintReceiptClientPr
       `}} />
 
       {/* Kontrol Menu untuk layar Desktop & Mobile */}
-      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-center items-center gap-3 no-print z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-200 dark:bg-gray-900 border-t border-gray-400 dark:border-gray-800 flex flex-col md:flex-row justify-center items-center gap-3 no-print z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
          <button 
            onClick={() => window.location.href = '/dashboard'}
            className="w-full md:w-auto px-6 py-3 bg-gray-200 dark:bg-gray-800 text-text-main font-medium rounded-xl shadow hover:bg-gray-300 dark:hover:bg-gray-200 dark:bg-gray-700 transition"

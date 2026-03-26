@@ -98,7 +98,7 @@ export default function PSGrid() {
       <div className="flex justify-end">
         <button 
            onClick={() => setShowQuickModal(true)}
-           className="flex items-center gap-2 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-gray-500 text-gray-800 dark:text-gray-200 text-sm font-medium px-4 py-2.5 rounded-lg transition-all"
+           className="flex items-center gap-2 bg-gray-200 dark:bg-gray-900 border border-gray-400 dark:border-gray-700 hover:border-gray-600 dark:hover:border-gray-500 text-gray-900 dark:text-gray-200 text-sm font-medium px-4 py-2.5 rounded-lg transition-all"
         >
           <Zap className="w-4 h-4 text-yellow-500" />
           Buat Struk Cepat (Offline/Manual)
@@ -107,7 +107,7 @@ export default function PSGrid() {
 
       {/* Quick Manual Modal */}
       {showQuickModal && (
-        <div className="fixed inset-0 bg-black/70 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 bg-gray-900/70 dark:bg-black/70 z-[60] flex items-center justify-center p-4 backdrop-blur-sm">
           <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 p-6 rounded-2xl w-full max-w-sm shadow-xl">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
@@ -173,7 +173,7 @@ export default function PSGrid() {
 
       {/* Time Modal */}
       {showTimeModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-gray-900/50 dark:bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 p-6 rounded-xl w-full max-w-sm shadow-xl">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Set Waktu Mulai</h3>

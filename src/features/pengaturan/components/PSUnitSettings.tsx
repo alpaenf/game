@@ -112,7 +112,7 @@ export default function PSUnitSettings() {
       </div>
 
       {isEditModalOpen && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 bg-gray-900/70 dark:bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
           <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 p-6 rounded-2xl w-full max-w-sm shadow-xl">
              <div className="flex justify-between items-center mb-6">
                 <h3 className="text-lg font-bold text-text-main">

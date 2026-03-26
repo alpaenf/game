@@ -74,7 +74,7 @@ export default function KasirClient({ initialProfiles }: { initialProfiles: Prof
       </div>
 
       {showAddModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-gray-900/80 dark:bg-black/80 flex items-center justify-center p-4">
           <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-xl p-6 w-full max-w-md">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-medium text-gray-900 dark:text-gray-100">Tambah Akun Tim</h2>
@@ -121,7 +121,7 @@ export default function KasirClient({ initialProfiles }: { initialProfiles: Prof
       <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm whitespace-nowrap">
-            <thead className="bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+            <thead className="bg-gray-200 dark:bg-gray-900 border-b border-gray-400 dark:border-gray-800 text-gray-700 dark:text-gray-400 font-semibold">
               <tr>
                 <th className="px-6 py-4 font-medium">Nama/Email</th>
                 <th className="px-6 py-4 font-medium">Role</th>

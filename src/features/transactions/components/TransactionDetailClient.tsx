@@ -103,7 +103,7 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{psUnit.name}</h1>
-            <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded text-[10px] font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+            <span className="px-2 py-0.5 bg-gray-200 dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded text-[10px] font-medium text-gray-900 dark:text-gray-400 uppercase tracking-wider">
               {psUnit.type}
             </span>
             <span className={`px-2 py-0.5 rounded text-[10px] font-medium border ${isCompleted ? 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-700' : 'bg-primary/10 text-primary border-primary/20'}`}>

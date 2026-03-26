@@ -141,7 +141,7 @@ export default function Sidebar({ role, userName }: SidebarProps) {
 
       {/* --- MORE MENU POPUP (MOBILE) --- */}
       {showMoreMenu && (
-        <div className="md:hidden fixed inset-0 z-[45] bg-black/40 dark:bg-black/20 dark:bg-black/60 backdrop-blur-sm" onClick={() => setShowMoreMenu(false)}>
+        <div className="md:hidden fixed inset-0 z-[45] bg-gray-900/40 dark:bg-black/60 backdrop-blur-sm" onClick={() => setShowMoreMenu(false)}>
           <div 
             className="absolute bottom-[5rem] right-4 w-48 bg-surface border border-gray-200 dark:border-gray-300 dark:border-gray-700/50 rounded-2xl shadow-2xl p-2 mb-2 animate-in slide-in-from-bottom-4 fade-in duration-200"
             onClick={(e) => e.stopPropagation()}

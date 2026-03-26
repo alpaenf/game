@@ -61,7 +61,7 @@ export default function ProductListClient({ userRole }: Props) {
 
       <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden shadow-lg">
         {/* Toolbar / Search */}
-        <div className="p-4 border-b border-gray-200 dark:border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-100 dark:bg-gray-100/ dark:bg-gray-900/">
+        <div className="p-4 border-b border-gray-300 dark:border-gray-800 flex justify-between items-center bg-gray-200 dark:bg-gray-900">
            <div className="relative w-full max-w-sm">
              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 dark:text-gray-400" />
              <input 

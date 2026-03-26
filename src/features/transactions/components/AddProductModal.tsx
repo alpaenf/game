@@ -65,7 +65,7 @@ export default function AddProductModal({ txId, onClose, onSuccess }: ModalProps
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 dark:bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/20 dark:bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-2xl p-6 w-full max-w-md shadow-2xl relative">
         <button 
           onClick={onClose}

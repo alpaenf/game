@@ -73,7 +73,7 @@ export default async function LandingPage() {
           </Link>
           <a 
             href="#fitur"
-            className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-text-main text-base md:text-lg font-medium rounded-full hover:bg-gray-200 dark:bg-gray-800 transition-all hover:-translate-y-1 hover:shadow-lg"
+            className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-gray-200 dark:bg-gray-900 border border-gray-400 dark:border-gray-700 text-text-main text-base md:text-lg font-medium rounded-full hover:bg-gray-300 dark:hover:bg-gray-800 transition-all hover:-translate-y-1 hover:shadow-lg"
           >
             Pelajari Fitur
           </a>
@@ -84,7 +84,7 @@ export default async function LandingPage() {
       {/* Floating 3D/SVG Mockup Illustration (Abstract) */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 pb-32">
          {/* Perspective Wrapper */}
-         <div className="relative rounded-[2rem] border border-gray-200 dark:border-gray-200 dark:border-gray-800/80 bg-gray-100 dark:bg-gray-100/ dark:bg-gray-900/ backdrop-blur-xl p-3 md:p-5 shadow-2xl overflow-hidden ring-1 ring-white/10 [transform:perspective(1200px)_rotateX(5deg)] hover:[transform:perspective(1200px)_rotateX(0deg)] transition-all duration-700 hover:shadow-[0_20px_50px_rgba(34,197,94,0.15)] animate-in slide-in-from-bottom-12 fade-in duration-[1500ms]">
+         <div className="relative rounded-[2rem] border border-gray-200 dark:border-gray-800/80 bg-gray-200 dark:bg-gray-900 backdrop-blur-xl p-3 md:p-5 shadow-2xl overflow-hidden ring-1 ring-gray-400/10 dark:ring-white/10 [transform:perspective(1200px)_rotateX(5deg)] hover:[transform:perspective(1200px)_rotateX(0deg)] transition-all duration-700 hover:shadow-[0_20px_50px_rgba(34,197,94,0.15)] animate-in slide-in-from-bottom-12 fade-in duration-[1500ms]">
             
             {/* Window header */}
             <div className="flex items-center gap-2 mb-4 px-4 pb-4 border-b border-gray-200 dark:border-gray-200 dark:border-gray-800/50">
@@ -126,12 +126,12 @@ export default async function LandingPage() {
             </svg>
 
             {/* Overlay Gradient to make it fade cleanly */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[rgba(10,10,10,0.1)] z-10 pointer-events-none rounded-[2rem]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/10 z-10 pointer-events-none rounded-[2rem]" />
          </div>
       </div>
 
       {/* Features Bento Grid */}
-      <section id="fitur" className="relative z-10 bg-black/40 border-y border-gray-200 dark:border-gray-200 dark:border-gray-800/50 backdrop-blur-lg py-20 md:py-32">
+      <section id="fitur" className="relative z-10 bg-gray-900/40 dark:bg-black/40 border-y border-gray-200 dark:border-gray-800/50 backdrop-blur-lg py-20 md:py-32">
          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <AnimatedSection direction="up">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 tracking-tight">Kekuatan di Tangan Anda</h2>
@@ -189,7 +189,7 @@ export default async function LandingPage() {
                </div>
 
                 {/* Feature 5 */}
-                <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-3xl p-8 hover:border-green-500/50 transition-all hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] group relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] to-emerald-900/10 hover:-translate-y-1 cursor-default">
+                <div className="bg-surface border border-gray-200 dark:border-gray-800 rounded-3xl p-8 hover:border-green-500/50 transition-all hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] group relative overflow-hidden bg-gradient-to-br from-gray-100 dark:from-[#0a0a0a] to-green-500/5 dark:to-emerald-900/10 hover:-translate-y-1 cursor-default">
                   <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xTTEwIDBIMUMwIDEweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==')] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="relative z-10 w-14 h-14 bg-green-500/10 border border-green-500/30 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
                      <Gamepad2 className="w-7 h-7 text-green-400 group-hover:animate-bounce" />
@@ -219,7 +219,7 @@ export default async function LandingPage() {
 
                {/* Step 1 */}
                <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-2xl md:rounded-3xl p-6 md:p-8 text-center relative hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-2xl font-black text-text-main mx-auto mb-6 shadow-xl">1</div>
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-full flex items-center justify-center text-2xl font-black text-text-main mx-auto mb-6 shadow-xl">1</div>
                   <h3 className="text-xl font-bold mb-3 text-text-main">Setup Unit PS & Harga</h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                      Masuk ke menu Pengaturan, tambahkan unit TV/PS Anda dan atur tarif sewa per jamnya.
@@ -237,7 +237,7 @@ export default async function LandingPage() {
 
                {/* Step 3 */}
                <div className="bg-surface border border-gray-200 dark:border-gray-200 dark:border-gray-800 rounded-3xl p-8 text-center relative hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-2xl font-black text-text-main mx-auto mb-6 shadow-xl">3</div>
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-full flex items-center justify-center text-2xl font-black text-text-main mx-auto mb-6 shadow-xl">3</div>
                   <h3 className="text-xl font-bold mb-3 text-text-main">Selesai & Bayar</h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                      Klik Selesai saat customer stop bermain. Sistem akan menjumlah tagihan, dan Anda siap mencetak atau mengirim struk ke WhatsApp.
@@ -278,7 +278,7 @@ export default async function LandingPage() {
             </div>
 
             {/* Pro Tier */}
-            <div className="bg-gradient-to-b from-[#0f1f14] to-[#0a0a0a] border border-primary/40 rounded-2xl md:rounded-3xl p-6 md:p-8 relative flex flex-col shadow-[0_0_40px_rgba(34,197,94,0.1)] transform md:-translate-y-4">
+            <div className="bg-gradient-to-b from-green-50 dark:from-[#0f1f14] to-background dark:to-[#0a0a0a] border border-primary/40 rounded-2xl md:rounded-3xl p-6 md:p-8 relative flex flex-col shadow-[0_0_40px_rgba(34,197,94,0.1)] transform md:-translate-y-4">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white font-bold px-3 md:px-4 py-1 rounded-full text-xs md:text-sm whitespace-nowrap">
                 PALING POPULER
               </div>
