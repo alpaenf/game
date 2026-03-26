@@ -74,7 +74,7 @@ export default function HistoryListClient({ userRole = "admin" }: { userRole?: s
             </div>
             <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Total Omset</p>
-                <h3 className="text-2xl font-bold text-text-main">{formatRupiah(summary.totalOmset)}</h3>
+                <h3 className="text-2xl font-bold text-text-main">{formatRupiah(summary.totalOmset, true)}</h3>
             </div>
         </div>
         <div className="bg-surface p-5 rounded-2xl border border-gray-200 dark:border-gray-200 dark:border-gray-800 flex items-center gap-4">
@@ -83,7 +83,7 @@ export default function HistoryListClient({ userRole = "admin" }: { userRole?: s
             </div>
             <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Biaya Rental PS</p>
-                <h3 className="text-xl font-bold text-text-main">{formatRupiah(summary.totalPSTotal)}</h3>
+                <h3 className="text-xl font-bold text-text-main">{formatRupiah(summary.totalPSTotal, true)}</h3>
             </div>
         </div>
         <div className="bg-surface p-5 rounded-2xl border border-gray-200 dark:border-gray-200 dark:border-gray-800 flex items-center gap-4">
@@ -92,7 +92,7 @@ export default function HistoryListClient({ userRole = "admin" }: { userRole?: s
             </div>
             <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Snack & Makanan</p>
-                <h3 className="text-xl font-bold text-text-main">{formatRupiah(summary.totalItemsTotal)}</h3>
+                <h3 className="text-xl font-bold text-text-main">{formatRupiah(summary.totalItemsTotal, true)}</h3>
             </div>
         </div>
         <div className="bg-surface p-5 rounded-2xl border border-gray-200 dark:border-gray-200 dark:border-gray-800 flex items-center gap-4">

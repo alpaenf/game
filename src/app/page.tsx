@@ -30,14 +30,14 @@ export default async function LandingPage() {
           {session ? (
             <Link
               href="/dashboard"
-              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-primary text-black font-semibold rounded-full hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105 active:scale-95"
+              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-primary text-white font-semibold rounded-full hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105 active:scale-95"
             >
               Ke Dashboard
             </Link>
           ) : (
             <Link 
               href="/login" 
-              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-white text-white font-semibold rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
               Masuk
             </Link>
@@ -66,7 +66,7 @@ export default async function LandingPage() {
         <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-3 md:gap-4 px-4 sm:px-0">
           <Link 
             href={session ? "/dashboard" : "/login"}
-            className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary text-black text-base md:text-lg font-bold rounded-full hover:bg-green-500 transition-all shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_50px_rgba(34,197,94,0.6)] hover:-translate-y-1"
+            className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary text-white text-base md:text-lg font-bold rounded-full hover:bg-green-500 transition-all shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_50px_rgba(34,197,94,0.6)] hover:-translate-y-1"
           >
             Mulai Gunakan Gratis
             <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
@@ -279,7 +279,7 @@ export default async function LandingPage() {
 
             {/* Pro Tier */}
             <div className="bg-gradient-to-b from-[#0f1f14] to-[#0a0a0a] border border-primary/40 rounded-2xl md:rounded-3xl p-6 md:p-8 relative flex flex-col shadow-[0_0_40px_rgba(34,197,94,0.1)] transform md:-translate-y-4">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black font-bold px-3 md:px-4 py-1 rounded-full text-xs md:text-sm whitespace-nowrap">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white font-bold px-3 md:px-4 py-1 rounded-full text-xs md:text-sm whitespace-nowrap">
                 PALING POPULER
               </div>
               <h3 className="text-xl md:text-2xl font-bold mb-2 text-primary">Pro Unlimited</h3>
@@ -295,7 +295,7 @@ export default async function LandingPage() {
               </ul>
               <Link 
                 href="/login" 
-                className="w-full py-3 md:py-4 rounded-xl bg-primary text-black font-bold hover:bg-green-500 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] text-sm md:text-base"
+                className="w-full py-3 md:py-4 rounded-xl bg-primary text-white font-bold hover:bg-green-500 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] text-sm md:text-base"
               >
                 Mulai Berlangganan <Rocket className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
@@ -320,7 +320,7 @@ export default async function LandingPage() {
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
               <Link 
                 href="/login" 
-                className="px-8 md:px-10 py-3 md:py-4 bg-primary text-black font-bold text-base md:text-lg rounded-full hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(34,197,94,0.4)] w-full sm:w-auto"
+                className="px-8 md:px-10 py-3 md:py-4 bg-primary text-white font-bold text-base md:text-lg rounded-full hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(34,197,94,0.4)] w-full sm:w-auto"
               >
                 Buat Akun Gratis Sekarang
               </Link>

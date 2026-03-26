@@ -116,7 +116,7 @@ export default function AddProductModal({ txId, onClose, onSuccess }: ModalProps
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-4 py-3 bg-primary text-black font-bold rounded-xl hover:bg-green-500 transition-colors disabled:opacity-50"
+              className="w-full mt-4 py-3 bg-primary text-white font-bold rounded-xl hover:bg-green-500 transition-colors disabled:opacity-50"
             >
               {loading ? "Menambahkan..." : "Tambahkan ke Tagihan"}
             </button>

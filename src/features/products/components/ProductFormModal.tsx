@@ -90,7 +90,7 @@ export default function ProductFormModal({ product, onClose }: ModalProps) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-6 py-3 bg-primary text-black font-bold rounded-xl hover:bg-green-500 transition-colors disabled:opacity-50"
+            className="w-full mt-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-green-500 transition-colors disabled:opacity-50"
           >
             {loading ? "Menyimpan..." : "Simpan Data Produk"}
           </button>

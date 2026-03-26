@@ -66,7 +66,7 @@ export default function KasirClient({ initialProfiles }: { initialProfiles: Prof
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 bg-primary text-black px-4 py-2 text-sm font-medium rounded hover:bg-primary/90 transition-colors"
+          className="flex items-center gap-2 bg-primary text-white px-4 py-2 text-sm font-medium rounded hover:bg-primary/90 transition-colors"
         >
           <Plus className="w-4 h-4" />
           Tambah Akun
@@ -108,7 +108,7 @@ export default function KasirClient({ initialProfiles }: { initialProfiles: Prof
                  <button 
                    type="submit" 
                    disabled={isSubmitting}
-                   className="w-full py-2.5 bg-gray-100 text-black font-semibold rounded hover:bg-white disabled:opacity-50 transition-colors"
+                   className="w-full py-2.5 bg-gray-100 text-white font-semibold rounded hover:bg-white disabled:opacity-50 transition-colors"
                  >
                    {isSubmitting ? "Menyimpan ke Database..." : "Simpan & Buat Akun"}
                  </button>
@@ -168,7 +168,7 @@ export default function KasirClient({ initialProfiles }: { initialProfiles: Prof
                         "inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded border transition-colors",
                         profile.role === "admin"
                           ? "text-gray-600 dark:text-gray-400 hover:text-text-main border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:bg-gray-800"
-                          : "text-primary hover:text-black border-primary/30 hover:bg-primary"
+                          : "text-primary hover:text-white border-primary/30 hover:bg-primary"
                       )}
                     >
                       {loadingId === profile.id ? (

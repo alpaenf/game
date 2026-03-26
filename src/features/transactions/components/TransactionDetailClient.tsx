@@ -138,7 +138,7 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
             {!isCompleted && (
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="flex items-center gap-1 bg-primary text-black px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-green-500 transition-colors"
+                className="flex items-center gap-1 bg-primary text-white px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-green-500 transition-colors"
                >
                 <Plus className="w-4 h-4" /> Tambah
               </button>
@@ -183,7 +183,7 @@ export default function TransactionDetailClient({ txId }: { txId: string }) {
           <button
             onClick={handleFinishSession}
             disabled={isFinishing}
-            className="flex items-center gap-2 px-8 py-4 bg-primary text-black text-lg font-bold rounded-xl hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] disabled:opacity-50"
+            className="flex items-center gap-2 px-8 py-4 bg-primary text-white text-lg font-bold rounded-xl hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] disabled:opacity-50"
           >
             {isFinishing ? (
                <span className="animate-spin h-6 w-6 border-2 border-black border-t-transparent rounded-full" />

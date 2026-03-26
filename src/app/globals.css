@@ -14,11 +14,11 @@
   /* Light mode defaults */
   --bg-color: #f9fafb;
   --surface-color: #ffffff;
-  --primary-color: #000000;
+  --primary-color: #22c55e;
   --secondary-color: #4b5563;
   --text-color: #111827;
   --border-color: #e5e7eb;
-  
+
   /* Scrollbar */
   --scrollbar-track: #f3f4f6;
   --scrollbar-thumb: #d1d5db;
@@ -29,11 +29,7 @@
   /* Dark mode */
   --bg-color: #000000;
   --surface-color: #0a0a0a;
-  --primary-color: #ffffff;
-  --secondary-color: #a1a1aa;
-  --text-color: #fafafa;
-  --border-color: #27272a;
-  
+  --primary-color: #22c55e;
   /* Scrollbar */
   --scrollbar-track: #000000;
   --scrollbar-thumb: #0a0a0a;

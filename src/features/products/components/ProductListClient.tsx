@@ -52,7 +52,7 @@ export default function ProductListClient({ userRole }: Props) {
               setProductToEdit(null);
               setIsModalOpen(true);
             }}
-            className="flex items-center gap-2 px-4 py-2 bg-primary text-black font-semibold rounded-lg hover:bg-green-500 transition-colors shadow-[0_0_15px_rgba(34,197,94,0.3)]"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-green-500 transition-colors shadow-[0_0_15px_rgba(34,197,94,0.3)]"
           >
             <Plus className="w-5 h-5" /> Tambah Produk
           </button>

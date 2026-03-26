@@ -29,7 +29,7 @@ export default async function SettingsPage() {
           <h1 className="text-3xl font-bold tracking-tight text-text-main mb-2">Pengaturan Sistem</h1>
           <p className="text-gray-600 dark:text-gray-400">Konfigurasi bisnis, tarif dasar, dan manajemen akses akun.</p>
         </div>
-        <button className="flex items-center gap-2 px-6 py-2.5 bg-primary text-black font-semibold rounded-lg hover:bg-green-500 transition-colors shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+        <button className="flex items-center gap-2 px-6 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-green-500 transition-colors shadow-[0_0_15px_rgba(34,197,94,0.3)]">
            <Save className="w-4 h-4" />
            Simpan Perubahan
         </button>

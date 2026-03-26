@@ -163,7 +163,7 @@ export default function PSUnitSettings() {
                 <button
                   type="submit"
                   disabled={formLoading}
-                  className="w-full mt-4 py-2.5 bg-primary text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex justify-center items-center gap-2"
+                  className="w-full mt-4 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-green-500 transition-colors flex justify-center items-center gap-2"
                 >
                   {formLoading ? "Menyimpan..." : (
                     <>
