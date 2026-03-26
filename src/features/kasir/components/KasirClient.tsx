@@ -108,7 +108,7 @@ export default function KasirClient({ initialProfiles }: { initialProfiles: Prof
                  <button 
                    type="submit" 
                    disabled={isSubmitting}
-                   className="w-full py-2.5 bg-gray-100 text-white font-semibold rounded hover:bg-white disabled:opacity-50 transition-colors"
+                   className="w-full py-2.5 bg-gray-100 dark:bg-gray-800 text-black dark:text-white font-semibold rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 transition-colors"
                  >
                    {isSubmitting ? "Menyimpan ke Database..." : "Simpan & Buat Akun"}
                  </button>

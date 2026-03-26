@@ -37,7 +37,7 @@ export default async function LandingPage() {
           ) : (
             <Link 
               href="/login" 
-              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-white text-white font-semibold rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
               Masuk
             </Link>
