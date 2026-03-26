@@ -10,13 +10,13 @@ interface PrintReceiptClientProps {
 }
 
 export default function PrintReceiptClient({ transaction }: PrintReceiptClientProps) {
-  useEffect(() => {
-    // Memberikan jeda sebentar agar DOM benar-benar siap dirender sebelum memanggil print
-    const timer = setTimeout(() => {
-      window.print();
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // Memberikan jeda sebentar agar DOM benar-benar siap dirender sebelum memanggil print
+  //   const timer = setTimeout(() => {
+  //     window.print();
+  //   }, 500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const {
     start_time,
@@ -140,16 +140,15 @@ export default function PrintReceiptClient({ transaction }: PrintReceiptClientPr
         }
       `}} />
 
-      <div className="fixed top-4 left-4 no-print">
+      {/* Kontrol Menu untuk layar Desktop & Mobile */}
+      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-900 border-t border-gray-800 flex flex-col md:flex-row justify-center items-center gap-3 no-print z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
          <button 
            onClick={() => window.location.href = '/dashboard'}
-           className="px-4 py-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 transition"
+           className="w-full md:w-auto px-6 py-3 bg-gray-800 text-white font-medium rounded-xl shadow hover:bg-gray-700 transition"
          >
            Kembali ke Dashboard
          </button>
-      </div>
-
-       <div className="fixed top-4 right-4 no-print flex flex-col gap-2">
+         
          <button 
            onClick={() => {
               const itemsText = transaction_items?.length > 0 
@@ -175,18 +174,21 @@ Terima kasih telah bermain di tempat kami!`;
               const encodedText = encodeURIComponent(waText);
               window.open(`https://wa.me/?text=${encodedText}`, '_blank');
            }}
-           className="px-4 py-2 flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold rounded-lg shadow-lg hover:bg-[#20b858] transition"
+           className="w-full md:w-auto px-6 py-3 flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold rounded-xl shadow-lg hover:bg-[#20b858] transition"
          >
-           Kirim ke WA
+           Kirim Teks ke WA
          </button>
 
          <button 
            onClick={() => window.print()}
-           className="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-500 transition"
+           className="w-full md:w-auto px-6 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:bg-blue-500 transition"
          >
-           Cetak Ulang
+           Cetak / Simpan PDF
          </button>
       </div>
+
+      {/* Tambahan padding bawah agar struk tidak tertutup navbar fix di mobile */}
+      <div className="h-40 no-print"></div>
     </div>
   );
 }

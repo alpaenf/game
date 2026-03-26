@@ -18,58 +18,58 @@ export default async function LandingPage() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0" />
 
       {/* Navbar */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2 font-bold text-2xl tracking-tighter">
-          <Gamepad2 className="w-8 h-8 text-primary" /> 
+      <nav className="relative z-10 flex items-center justify-between px-6 py-4 md:py-6 md:px-12 max-w-7xl mx-auto">
+        <div className="flex items-center gap-2 font-bold text-xl md:text-2xl tracking-tighter">
+          <Gamepad2 className="w-6 h-6 md:w-8 md:h-8 text-primary" /> 
           Alfaen<span className="text-gray-400 font-light">Game</span>
         </div>
         <div className="flex gap-4">
           {session ? (
             <Link 
               href="/dashboard" 
-              className="px-6 py-2.5 bg-primary text-black font-semibold rounded-full hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105 active:scale-95"
+              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-primary text-black font-semibold rounded-full hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105 active:scale-95"
             >
               Ke Dashboard
             </Link>
           ) : (
             <Link 
               href="/login" 
-              className="px-6 py-2.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
-              Masuk / Login
+              Masuk
             </Link>
           )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-20 pb-32 max-w-5xl mx-auto animate-in slide-in-from-bottom-8 fade-in duration-1000">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 animate-bounce shadow-[0_0_15px_rgba(34,197,94,0.2)]">
-          <Zap className="w-4 h-4 fill-primary" /> Versi V2.0 Tersedia Sekarang!
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-12 md:pt-20 pb-20 md:pb-32 max-w-5xl mx-auto animate-in slide-in-from-bottom-8 fade-in duration-1000">
+        <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-medium mb-6 md:mb-8 animate-bounce shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+          <Zap className="w-3 h-3 md:w-4 md:h-4 fill-primary" /> Versi V2.0 Tersedia Sekarang!
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 md:mb-8 leading-tight">
           Sistem Billing <br className="hidden md:block"/>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-300">
             Rental PlayStation
           </span> Modern
         </h1>
         
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mb-10 md:mb-12 leading-relaxed px-4 md:px-0">
           Tinggalkan pencatatan manual. Kelola tarif, inventaris produk, pantau riwayat & kasir, serta lihat laporan keuangan Anda dalam satu dasbor cerdas.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-3 md:gap-4 px-4 sm:px-0">
           <Link 
             href={session ? "/dashboard" : "/login"}
-            className="group flex items-center justify-center gap-2 px-8 py-4 bg-primary text-black text-lg font-bold rounded-full hover:bg-green-500 transition-all shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_50px_rgba(34,197,94,0.6)] hover:-translate-y-1"
+            className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary text-black text-base md:text-lg font-bold rounded-full hover:bg-green-500 transition-all shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_50px_rgba(34,197,94,0.6)] hover:-translate-y-1"
           >
             Mulai Gunakan Gratis
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a 
             href="#fitur"
-            className="flex items-center justify-center px-8 py-4 bg-gray-900 border border-gray-700 text-white text-lg font-medium rounded-full hover:bg-gray-800 transition-all hover:-translate-y-1 hover:shadow-lg"
+            className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-gray-900 border border-gray-700 text-white text-base md:text-lg font-medium rounded-full hover:bg-gray-800 transition-all hover:-translate-y-1 hover:shadow-lg"
           >
             Pelajari Fitur
           </a>
@@ -126,16 +126,16 @@ export default async function LandingPage() {
       </div>
 
       {/* Features Bento Grid */}
-      <section id="fitur" className="relative z-10 bg-black/40 border-y border-gray-800/50 backdrop-blur-lg py-32">
-         <div className="max-w-7xl mx-auto px-6">
+      <section id="fitur" className="relative z-10 bg-black/40 border-y border-gray-800/50 backdrop-blur-lg py-20 md:py-32">
+         <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 tracking-tight">Kekuatan di Tangan Anda</h2>
-            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16 text-lg">
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12 md:mb-16 text-base md:text-lg px-4 md:px-0">
                Sistem komprehensif yang dirancang spesifik untuk mendukung operasional lapangan rental PlayStation secara optimal.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                {/* Feature 1 */}
-               <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 hover:border-primary/50 transition-all hover:shadow-[0_0_30px_rgba(34,197,94,0.1)] group hover:-translate-y-1 cursor-default">
+               <div className="bg-[#0a0a0a] border border-gray-800 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:border-primary/50 transition-all hover:shadow-[0_0_30px_rgba(34,197,94,0.1)] group hover:-translate-y-1 cursor-default">
                   <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Timer className="w-7 h-7 text-primary group-hover:animate-[spin_4s_linear_infinite]" />
                   </div>
@@ -197,21 +197,21 @@ export default async function LandingPage() {
       </section>
 
       {/* How to Use Section */}
-      <section className="relative z-10 py-32 bg-[#020202]">
-         <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-               <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Cara Penggunaan Cukup 3 Langkah</h2>
-               <p className="text-gray-400 text-lg">
+      <section className="relative z-10 py-20 md:py-32 bg-[#020202]">
+         <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+               <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight px-2">Cara Penggunaan Cukup 3 Langkah</h2>
+               <p className="text-gray-400 text-base md:text-lg px-4 md:px-0">
                   Sistem dibuat sangat sederhana agar mudah dipahami kasir baru sekalipun.
                </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto relative px-4 md:px-0">
                {/* Decorative line connecting steps (desktop only) */}
                <div className="hidden md:block absolute top-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10" />
 
                {/* Step 1 */}
-               <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 text-center relative hover:-translate-y-2 transition-transform duration-300">
+               <div className="bg-[#0a0a0a] border border-gray-800 rounded-2xl md:rounded-3xl p-6 md:p-8 text-center relative hover:-translate-y-2 transition-transform duration-300">
                   <div className="w-16 h-16 bg-gray-900 border border-gray-700 rounded-full flex items-center justify-center text-2xl font-black text-white mx-auto mb-6 shadow-xl">1</div>
                   <h3 className="text-xl font-bold mb-3 text-white">Setup Unit PS & Harga</h3>
                   <p className="text-gray-400 leading-relaxed text-sm">
@@ -241,56 +241,56 @@ export default async function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="relative z-10 py-32 bg-[#050505]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Investasi Cerdas untuk Bisnis Anda</h2>
-            <p className="text-gray-400 text-lg">
+      <section className="relative z-10 py-20 md:py-32 bg-[#050505]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight px-2">Investasi Cerdas untuk Bisnis Anda</h2>
+            <p className="text-gray-400 text-base md:text-lg px-4 md:px-0">
               Satu harga, akses penuh ke semua fitur tanpa biaya tersembunyi.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto px-2 md:px-0">
             {/* Free Tier */}
-            <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 hover:border-gray-600 transition-all flex flex-col">
-              <h3 className="text-2xl font-bold mb-2">Demo / Starter</h3>
-              <p className="text-gray-400 mb-6">Cocok untuk mencoba sistem</p>
-              <div className="text-4xl font-extrabold mb-8">Rp 0 <span className="text-lg text-gray-500 font-normal">/selamanya</span></div>
+            <div className="bg-[#0a0a0a] border border-gray-800 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:border-gray-600 transition-all flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Demo / Starter</h3>
+              <p className="text-gray-400 mb-6 text-sm md:text-base">Cocok untuk mencoba sistem</p>
+              <div className="text-3xl md:text-4xl font-extrabold mb-8">Rp 0 <span className="text-base md:text-lg text-gray-500 font-normal">/selamanya</span></div>
               
-              <ul className="space-y-4 mb-8 flex-1 text-gray-300">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gray-500" /> Max 5 Unit PS</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gray-500" /> Max 20 Transaksi per hari</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gray-500" /> Fitur Kasir Standar</li>
+              <ul className="space-y-3 md:space-y-4 mb-8 flex-1 text-gray-300 text-sm md:text-base">
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gray-500 shrink-0" /> Max 5 Unit PS</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gray-500 shrink-0" /> Max 20 Transaksi per hari</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gray-500 shrink-0" /> Fitur Kasir Standar</li>
               </ul>
               <Link 
                 href="/login" 
-                className="w-full py-4 rounded-xl border border-gray-700 font-bold hover:bg-gray-800 transition-all flex justify-center text-gray-300"
+                className="w-full py-3 md:py-4 rounded-xl border border-gray-700 font-bold hover:bg-gray-800 transition-all flex justify-center text-gray-300 text-sm md:text-base"
               >
                 Coba Sekarang
               </Link>
             </div>
 
             {/* Pro Tier */}
-            <div className="bg-gradient-to-b from-[#0f1f14] to-[#0a0a0a] border border-primary/40 rounded-3xl p-8 relative flex flex-col shadow-[0_0_40px_rgba(34,197,94,0.1)] transform md:-translate-y-4">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black font-bold px-4 py-1 rounded-full text-sm">
+            <div className="bg-gradient-to-b from-[#0f1f14] to-[#0a0a0a] border border-primary/40 rounded-2xl md:rounded-3xl p-6 md:p-8 relative flex flex-col shadow-[0_0_40px_rgba(34,197,94,0.1)] transform md:-translate-y-4">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black font-bold px-3 md:px-4 py-1 rounded-full text-xs md:text-sm whitespace-nowrap">
                 PALING POPULER
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-primary">Pro Unlimited</h3>
-              <p className="text-gray-400 mb-6">Untuk rental yang serius berkembang</p>
-              <div className="text-4xl font-extrabold mb-8 text-white">Rp 99.000 <span className="text-lg text-gray-500 font-normal">/bulan</span></div>
+              <h3 className="text-xl md:text-2xl font-bold mb-2 text-primary">Pro Unlimited</h3>
+              <p className="text-gray-400 mb-6 text-sm md:text-base">Untuk rental yang serius berkembang</p>
+              <div className="text-3xl md:text-4xl font-extrabold mb-8 text-white">Rp 99.000 <span className="text-base md:text-lg text-gray-500 font-normal">/bulan</span></div>
               
-              <ul className="space-y-4 mb-8 flex-1 text-gray-200">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> <span className="font-semibold text-white">Unlimited</span> Unit PS</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> <span className="font-semibold text-white">Unlimited</span> Transaksi</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> Laporan Keuangan Detail</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> Integrasi Menu F&B</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> Prioritas Support 24/7</li>
+              <ul className="space-y-3 md:space-y-4 mb-8 flex-1 text-gray-200 text-sm md:text-base">
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary shrink-0" /> <span className="font-semibold text-white">Unlimited</span> Unit PS</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary shrink-0" /> <span className="font-semibold text-white">Unlimited</span> Transaksi</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary shrink-0" /> Laporan Keuangan Detail</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary shrink-0" /> Integrasi Menu F&B</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary shrink-0" /> Prioritas Support 24/7</li>
               </ul>
               <Link 
                 href="/login" 
-                className="w-full py-4 rounded-xl bg-primary text-black font-bold hover:bg-green-500 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)]"
+                className="w-full py-3 md:py-4 rounded-xl bg-primary text-black font-bold hover:bg-green-500 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] text-sm md:text-base"
               >
-                Mulai Berlangganan <Rocket className="w-5 h-5" />
+                Mulai Berlangganan <Rocket className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
             </div>
           </div>
@@ -298,20 +298,20 @@ export default async function LandingPage() {
       </section>
 
       {/* Main CTA Section */}
-      <section className="relative z-10 py-24 mb-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-green-900/40 via-primary/20 to-green-900/40 border border-primary/30 rounded-[2.5rem] p-12 text-center backdrop-blur-sm relative overflow-hidden">
+      <section className="relative z-10 py-16 md:py-24 mb-8 md:mb-16">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <div className="bg-gradient-to-r from-green-900/40 via-primary/20 to-green-900/40 border border-primary/30 rounded-3xl md:rounded-[2.5rem] p-8 md:p-12 text-center backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xTTEwIDBIMUMwIDEweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==')] opacity-20 pointer-events-none" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 relative z-10 leading-tight">
               Siap Mengubah Cara Anda <br className="hidden md:block" />Mengelola Rental PS?
             </h2>
-            <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto relative z-10 font-medium">
+            <p className="text-gray-300 text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto relative z-10 font-medium px-2">
               Ribuan pembukuan transaksi manual telah tergantikan. Bergabunglah sekarang dan rasakan kemudahan mengontrol pemasukan Anda.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
               <Link 
                 href="/login" 
-                className="px-10 py-4 bg-primary text-black font-bold text-lg rounded-full hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(34,197,94,0.4)]"
+                className="px-8 md:px-10 py-3 md:py-4 bg-primary text-black font-bold text-base md:text-lg rounded-full hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(34,197,94,0.4)] w-full sm:w-auto"
               >
                 Buat Akun Gratis Sekarang
               </Link>
