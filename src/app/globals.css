@@ -30,6 +30,10 @@
   --bg-color: #000000;
   --surface-color: #0a0a0a;
   --primary-color: #22c55e;
+  --secondary-color: #a1a1aa;
+  --text-color: #fafafa;
+  --border-color: #27272a;
+
   /* Scrollbar */
   --scrollbar-track: #000000;
   --scrollbar-thumb: #0a0a0a;
