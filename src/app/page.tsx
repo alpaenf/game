@@ -9,7 +9,7 @@ export default async function LandingPage() {
   const { data: { session } } = await supabase.auth.getSession();
 
   return (
-    <div className="min-h-screen bg-[#050505] text-text-main selection:bg-primary/30 relative overflow-hidden font-sans">
+    <div className="min-h-screen bg-background text-text-main selection:bg-primary/30 relative overflow-hidden font-sans">
       {/* Background decorations */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1200px] pointer-events-none z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[40rem] h-[40rem] bg-primary/10 rounded-full blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
@@ -204,7 +204,7 @@ export default async function LandingPage() {
       </section>
 
       {/* How to Use Section */}
-      <section className="relative z-10 py-20 md:py-32 bg-[#020202]">
+      <section className="relative z-10 py-20 md:py-32 bg-gray-50 dark:bg-[#020202]">
          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
                <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight px-2">Cara Penggunaan Cukup 3 Langkah</h2>
@@ -248,7 +248,7 @@ export default async function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="relative z-10 py-20 md:py-32 bg-[#050505]">
+      <section className="relative z-10 py-20 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight px-2">Investasi Cerdas untuk Bisnis Anda</h2>
@@ -331,7 +331,7 @@ export default async function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-gray-200 dark:border-gray-200 dark:border-gray-800/80 bg-[#020202] py-12">
+      <footer className="relative z-10 border-t border-gray-200 dark:border-gray-800/80 bg-gray-50 dark:bg-[#020202] py-12">
          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div className="flex items-center gap-2 font-bold text-xl tracking-tighter">
               <Gamepad2 className="w-6 h-6 text-gray-600" /> 
