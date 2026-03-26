@@ -207,56 +207,54 @@ export default async function LandingPage() {
       <section className="relative z-10 py-20 md:py-32 bg-background">
          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <AnimatedSection direction="up">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-                 <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
-                       <Gamepad2 className="w-4 h-4" /> Tentang Kami
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight leading-tight">
-                       Dibangun dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-primary">Keluh Kesah</span> Pengusaha Rental
-                    </h2>
-                    <div className="space-y-4 text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
-                       <p>
-                          AlfaenGame lahir bukan sekadar dari ide kosong, melainkan dari pengalaman nyata susahnya mengelola operasional rental PlayStation sehari-hari. 
-                       </p>
-                       <p>
-                          Mulai dari karyawan yang sering curang soal jam main, nota kertas yang hilang, hingga kesulitan melacak omset gabungan antara makanan (F&B) dan jam rental. Kami merancang sistem ini untuk <strong>menutup semua celah kebocoran</strong> pendapatan Anda.
-                       </p>
-                       <ul className="mt-6 space-y-3">
-                          <li className="flex items-center gap-3">
-                             <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
-                             <span className="font-medium text-text-main">Aman dari manipulasi kasir</span>
-                          </li>
-                          <li className="flex items-center gap-3">
-                             <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
-                             <span className="font-medium text-text-main">Laporan keuangan 100% transparan</span>
-                          </li>
-                          <li className="flex items-center gap-3">
-                             <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
-                             <span className="font-medium text-text-main">Fokus kembangkan cabang, biar sistem yang catat</span>
-                          </li>
-                       </ul>
-                    </div>
+              <div className="text-center max-w-4xl mx-auto mb-16 px-4">
+                 <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+                    <Gamepad2 className="w-4 h-4" /> Tentang Kami
                  </div>
-                 
-                 <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-primary/20 blur-3xl rounded-full opacity-50" />
-                    <div className="relative bg-surface border border-gray-200 dark:border-gray-800 p-8 rounded-3xl shadow-2xl">
-                       <div className="grid grid-cols-2 gap-6">
-                          <div className="text-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                             <div className="text-3xl font-black text-primary mb-2">99%</div>
-                             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Akurasi Billing</div>
-                          </div>
-                          <div className="text-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                             <div className="text-3xl font-black text-blue-500 mb-2">24/7</div>
-                             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Server Aktif</div>
-                          </div>
-                          <div className="text-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 col-span-2">
-                             <div className="text-3xl font-black text-orange-500 mb-2">Penyelamat Omset</div>
-                             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Ucapkan selamat tinggal pada tulisan manual</div>
-                          </div>
-                       </div>
+                 <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
+                    Dibangun dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-primary">Keluh Kesah</span> Pengusaha Rental
+                 </h2>
+                 <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+                    AlfaenGame lahir bukan sekadar dari ide kosong, melainkan dari pengalaman nyata susahnya mengelola operasional rental PlayStation sehari-hari. 
+                 </p>
+                 <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                    Mulai dari karyawan curang jam main, catatan kertas hilang, hingga rekap omset yang bocor. Kami merancang sistem ini untuk <strong>menutup semua celah</strong> kerugian Anda.
+                 </p>
+              </div>
+
+              {/* Grid Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto relative px-4 md:px-0">
+                 {/* Card 1 */}
+                 <div className="bg-surface border border-gray-200 dark:border-gray-800 rounded-3xl p-8 text-center relative hover:-translate-y-2 transition-transform duration-300 shadow-xl dark:shadow-none">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                       <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-500" />
                     </div>
+                    <h3 className="text-xl font-bold mb-3 text-text-main">Aman dari Manipulasi Kasir</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                       Karyawan nakal tidak bisa lagi akal-akalan karena semua riwayat jam main terekam otomatis oleh server.
+                    </p>
+                 </div>
+
+                 {/* Card 2 */}
+                 <div className="bg-surface border border-gray-200 dark:border-gray-800 rounded-3xl p-8 text-center relative hover:-translate-y-2 transition-transform duration-300 shadow-xl dark:shadow-none">
+                    <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                       <span className="text-xl font-black text-blue-600 dark:text-blue-500">99%</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-text-main">Transparan & Real-Time</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                       Akurasi hitungan tarif dijamin pas sampai satuan detik, laporan real-time yang bisa dipantau darimana saja.
+                    </p>
+                 </div>
+
+                 {/* Card 3 */}
+                 <div className="bg-surface border border-gray-200 dark:border-gray-800 rounded-3xl p-8 text-center relative hover:-translate-y-2 transition-transform duration-300 shadow-xl dark:shadow-none">
+                    <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                       <span className="text-xl font-black text-orange-600 dark:text-orange-500">24/7</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-text-main">Fokus Kembangkan Cabang</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                       Uucapkan selamat tinggal pada catatan manual, biarkan sistem cerdas ini menjadi penyelamat omset bisnis bulanan Anda.
+                    </p>
                  </div>
               </div>
             </AnimatedSection>
