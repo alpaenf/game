@@ -1,3 +1,5 @@
+import AnimatedSection from "@/components/AnimatedSection";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { Gamepad2, Timer, ShieldCheck, Zap, BarChart3, Users, ChevronRight, Receipt, CheckCircle2, Rocket } from "lucide-react";
@@ -20,13 +22,14 @@ export default async function LandingPage() {
       {/* Navbar */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-4 md:py-6 md:px-12 max-w-7xl mx-auto">
         <div className="flex items-center gap-2 font-bold text-xl md:text-2xl tracking-tighter">
-          <Gamepad2 className="w-6 h-6 md:w-8 md:h-8 text-primary" /> 
+          <Gamepad2 className="w-6 h-6 md:w-8 md:h-8 text-primary" />
           Alfaen<span className="text-gray-600 dark:text-gray-400 font-light">Game</span>
         </div>
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
           {session ? (
-            <Link 
-              href="/dashboard" 
+            <Link
+              href="/dashboard"
               className="px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base bg-primary text-black font-semibold rounded-full hover:bg-green-500 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105 active:scale-95"
             >
               Ke Dashboard
@@ -43,7 +46,8 @@ export default async function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-12 md:pt-20 pb-20 md:pb-32 max-w-5xl mx-auto animate-in slide-in-from-bottom-8 fade-in duration-1000">
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-12 md:pt-20 pb-20 md:pb-32 max-w-5xl mx-auto">
+      <AnimatedSection direction="up">
         <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-medium mb-6 md:mb-8 animate-bounce shadow-[0_0_15px_rgba(34,197,94,0.2)]">
           <Zap className="w-3 h-3 md:w-4 md:h-4 fill-primary" /> Versi V2.0 Tersedia Sekarang!
         </div>
@@ -74,6 +78,7 @@ export default async function LandingPage() {
             Pelajari Fitur
           </a>
         </div>
+      </AnimatedSection>
       </main>
 
       {/* Floating 3D/SVG Mockup Illustration (Abstract) */}
@@ -128,7 +133,9 @@ export default async function LandingPage() {
       {/* Features Bento Grid */}
       <section id="fitur" className="relative z-10 bg-black/40 border-y border-gray-200 dark:border-gray-200 dark:border-gray-800/50 backdrop-blur-lg py-20 md:py-32">
          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <AnimatedSection direction="up">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 tracking-tight">Kekuatan di Tangan Anda</h2>
+            </AnimatedSection>
             <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12 md:mb-16 text-base md:text-lg px-4 md:px-0">
                Sistem komprehensif yang dirancang spesifik untuk mendukung operasional lapangan rental PlayStation secara optimal.
             </p>
@@ -300,6 +307,8 @@ export default async function LandingPage() {
       {/* Main CTA Section */}
       <section className="relative z-10 py-16 md:py-24 mb-8 md:mb-16">
         <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <AnimatedSection direction="up">
+
           <div className="bg-gradient-to-r from-green-900/40 via-primary/20 to-green-900/40 border border-primary/30 rounded-3xl md:rounded-[2.5rem] p-8 md:p-12 text-center backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xTTEwIDBIMUMwIDEweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==')] opacity-20 pointer-events-none" />
             <h2 className="text-3xl md:text-5xl font-bold text-text-main mb-4 md:mb-6 relative z-10 leading-tight">
@@ -317,6 +326,7 @@ export default async function LandingPage() {
               </Link>
             </div>
           </div>
+          </AnimatedSection>
         </div>
       </section>
 

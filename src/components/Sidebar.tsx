@@ -18,6 +18,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface SidebarProps {
   role: string;
@@ -77,6 +78,7 @@ export default function Sidebar({ role, userName }: SidebarProps) {
           <Gamepad2 className="w-5 h-5" /> Alfaen<span className="text-gray-500 dark:text-gray-400 dark:text-gray-600 dark:text-gray-400 font-light">Game</span>
         </div>
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <div className="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-300 dark:border-gray-700 bg-background flex items-center justify-center text-xs font-medium text-text-main">
             {userName.charAt(0).toUpperCase()}
           </div>
@@ -122,10 +124,11 @@ export default function Sidebar({ role, userName }: SidebarProps) {
             <div className="w-8 h-8 shrink-0 rounded border border-gray-300 dark:border-gray-300 dark:border-gray-700 bg-background flex items-center justify-center text-text-main font-medium text-sm">
               {userName.charAt(0).toUpperCase()}
             </div>
-            <div className="flex flex-col min-w-0">
+            <div className="flex flex-col min-w-0 flex-1">
               <span className="text-sm font-medium text-text-main truncate" title={userName}>{userName}</span>
               <span className="text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400">{role}</span>
             </div>
+            <ThemeToggle />
           </div>
           <button
             onClick={handleLogout}
