@@ -2,6 +2,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
+import Image from "next/image";
 import { Gamepad2, Timer, ShieldCheck, Zap, BarChart3, Users, ChevronRight, Receipt, CheckCircle2, Rocket } from "lucide-react";
 
 export default async function LandingPage() {
@@ -21,10 +22,9 @@ export default async function LandingPage() {
 
       {/* Navbar */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-4 md:py-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2 font-bold text-xl md:text-2xl tracking-tighter">
-          <Gamepad2 className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-          Alfaen<span className="text-gray-600 dark:text-gray-400 font-light">Game</span>
-        </div>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="AlfaenGame Logo" width={180} height={40} className="w-auto h-8 md:h-10" priority />
+        </Link>
         <div className="flex items-center gap-4">
           <ThemeToggle />
           {session ? (
@@ -203,6 +203,66 @@ export default async function LandingPage() {
          </div>
       </section>
 
+      {/* About Section */}
+      <section className="relative z-10 py-20 md:py-32 bg-background">
+         <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <AnimatedSection direction="up">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                 <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+                       <Gamepad2 className="w-4 h-4" /> Tentang Kami
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight leading-tight">
+                       Dibangun dari <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-primary">Keluh Kesah</span> Pengusaha Rental
+                    </h2>
+                    <div className="space-y-4 text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
+                       <p>
+                          AlfaenGame lahir bukan sekadar dari ide kosong, melainkan dari pengalaman nyata susahnya mengelola operasional rental PlayStation sehari-hari. 
+                       </p>
+                       <p>
+                          Mulai dari karyawan yang sering curang soal jam main, nota kertas yang hilang, hingga kesulitan melacak omset gabungan antara makanan (F&B) dan jam rental. Kami merancang sistem ini untuk <strong>menutup semua celah kebocoran</strong> pendapatan Anda.
+                       </p>
+                       <ul className="mt-6 space-y-3">
+                          <li className="flex items-center gap-3">
+                             <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
+                             <span className="font-medium text-text-main">Aman dari manipulasi kasir</span>
+                          </li>
+                          <li className="flex items-center gap-3">
+                             <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
+                             <span className="font-medium text-text-main">Laporan keuangan 100% transparan</span>
+                          </li>
+                          <li className="flex items-center gap-3">
+                             <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
+                             <span className="font-medium text-text-main">Fokus kembangkan cabang, biar sistem yang catat</span>
+                          </li>
+                       </ul>
+                    </div>
+                 </div>
+                 
+                 <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-primary/20 blur-3xl rounded-full opacity-50" />
+                    <div className="relative bg-surface border border-gray-200 dark:border-gray-800 p-8 rounded-3xl shadow-2xl">
+                       <div className="grid grid-cols-2 gap-6">
+                          <div className="text-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800">
+                             <div className="text-3xl font-black text-primary mb-2">99%</div>
+                             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Akurasi Billing</div>
+                          </div>
+                          <div className="text-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800">
+                             <div className="text-3xl font-black text-blue-500 mb-2">24/7</div>
+                             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Server Aktif</div>
+                          </div>
+                          <div className="text-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 col-span-2">
+                             <div className="text-3xl font-black text-orange-500 mb-2">Penyelamat Omset</div>
+                             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Ucapkan selamat tinggal pada tulisan manual</div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+            </AnimatedSection>
+         </div>
+      </section>
+
       {/* How to Use Section */}
       <section className="relative z-10 py-20 md:py-32 bg-gray-50 dark:bg-[#020202]">
          <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -333,10 +393,9 @@ export default async function LandingPage() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-gray-200 dark:border-gray-800/80 bg-gray-50 dark:bg-[#020202] py-12">
          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div className="flex items-center gap-2 font-bold text-xl tracking-tighter">
-              <Gamepad2 className="w-6 h-6 text-gray-600" /> 
-              <span className="text-gray-600">Alfaen<span className="font-light">Game</span></span>
-            </div>
+            <Link href="/" className="flex items-center">
+               <Image src="/logo.png" alt="AlfaenGame Logo" width={140} height={32} className="w-auto h-6 md:h-8 opacity-70 hover:opacity-100 transition-opacity" />
+            </Link>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">
               Made for PlayStation Rentals. � {new Date().getFullYear()}
             </p>

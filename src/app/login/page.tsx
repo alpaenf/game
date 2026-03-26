@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export default async function LoginPage() {
@@ -50,10 +51,8 @@ export default async function LoginPage() {
       </Link>
 
       <div className="w-full max-w-sm p-8 bg-surface rounded-xl border border-gray-200 dark:border-gray-200 dark:border-gray-800 shadow-sm z-10">
-        <div className="mb-8">
-          <h1 className="text-2xl font-semibold tracking-tight text-text-main mb-1">
-            AlfaenGame.
-          </h1>
+        <div className="mb-8 flex flex-col items-start">
+          <Image src="/logo.png" alt="AlfaenGame Logo" width={180} height={40} className="w-auto h-8 mb-4" priority />
           <p className="text-sm text-gray-500 dark:text-gray-400">Sign in to your workspace</p>
         </div>
 

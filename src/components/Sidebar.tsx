@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Gamepad2,
@@ -74,9 +75,9 @@ export default function Sidebar({ role, userName }: SidebarProps) {
     <>
       {/* --- MOBILE TOP HEADER --- */}
       <header className="md:hidden flex items-center justify-between px-4 h-16 bg-surface border-b border-white/10 dark:border-gray-200 dark:border-gray-200 dark:border-gray-800 fixed top-0 w-full z-40">
-        <div className="flex items-center gap-2 font-semibold tracking-tight text-text-main">
-          <Gamepad2 className="w-5 h-5" /> Alfaen<span className="text-gray-500 dark:text-gray-400 dark:text-gray-600 dark:text-gray-400 font-light">Game</span>
-        </div>
+        <Link href="/dashboard" className="flex items-center">
+          <Image src="/logo.png" alt="AlfaenGame Logo" width={120} height={28} className="w-auto h-6" priority />
+        </Link>
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <div className="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-300 dark:border-gray-700 bg-background flex items-center justify-center text-xs font-medium text-text-main">
@@ -87,11 +88,10 @@ export default function Sidebar({ role, userName }: SidebarProps) {
 
       {/* --- DESKTOP SIDEBAR --- */}
       <aside className="fixed inset-y-0 left-0 z-40 w-64 md:w-64 bg-surface border-r border-white/10 dark:border-gray-200 dark:border-gray-200 dark:border-gray-800 flex-col hidden md:flex transition-all duration-300">
-        <div className="flex h-16 shrink-0 items-center justify-center gap-2 border-b border-white/10 dark:border-gray-200 dark:border-gray-200 dark:border-gray-800 px-6 font-semibold text-xl tracking-tight">
-          <Gamepad2 className="w-5 h-5 text-text-main" />
-          <span className="text-text-main">
-            Alfaen<span className="text-gray-500 dark:text-gray-400 dark:text-gray-600 dark:text-gray-400 font-light">Game</span>
-          </span>
+        <div className="flex h-16 shrink-0 items-center justify-center border-b border-white/10 dark:border-gray-200 dark:border-gray-200 dark:border-gray-800 px-6">
+          <Link href="/dashboard" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image src="/logo.png" alt="AlfaenGame Logo" width={140} height={32} className="w-auto h-7" priority />
+          </Link>
         </div>
 
         <div className="flex-1 overflow-y-auto py-6 px-3 space-y-1">
