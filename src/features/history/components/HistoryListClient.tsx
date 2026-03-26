@@ -4,14 +4,19 @@ import { useState } from "react";
 import { formatRupiah } from "@/lib/utils";
 import { format } from "date-fns";
 import { id as localeId } from "date-fns/locale";
-import { Search, Calendar, FileText, TrendingUp, MonitorPlay, Coffee, Trash2 } from "lucide-react";
+import { Search, Calendar, FileText, TrendingUp, MonitorPlay, Coffee, Trash2, Filter } from "lucide-react";
 import { useHistory } from "@/hooks/useHistory";
 import { useRouter } from "next/navigation";
 import { deleteTransactionAction } from "../services/deleteHistoryAction";
 
 export default function HistoryListClient({ userRole = "admin" }: { userRole?: string }) {
   const todayRaw = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+  const todayMonth = todayRaw.substring(0, 7); // YYYY-MM
+  const todayYear = todayRaw.substring(0, 4); // YYYY
+
+  const [filterType, setFilterType] = useState<"daily" | "monthly" | "yearly" | "all">("daily");
   const [dateFilter, setDateFilter] = useState<string>(todayRaw);
+  
   const { data, loading, summary } = useHistory(dateFilter);
   const router = useRouter();
   const [deletingId, setDeletingId] = useState<string | null>(null);
@@ -39,30 +44,45 @@ export default function HistoryListClient({ userRole = "admin" }: { userRole?: s
           <p className="text-gray-600 dark:text-gray-400">Pantau transaksi dan rekap pendapatan harian outlet.</p>
         </div>
 
-        {/* Filter Tanggal */}
-        <div className="flex items-center gap-2 bg-surface p-2 rounded-xl border border-gray-200 dark:border-gray-200 dark:border-gray-800">
-           <Calendar className="w-5 h-5 text-gray-600 dark:text-gray-400 ml-2" />
-           <select 
-             value={dateFilter} 
-             onChange={(e) => setDateFilter(e.target.value)}
-             className="bg-transparent text-text-main border-none focus:ring-0 outline-none pr-4 py-1"
-           >
-             <option value={todayRaw}>Hari Ini ({format(new Date(), "dd MMM")})</option>
-             <option value="all">Semua Waktu (500 Terakhir)</option>
-             {/* Jika Anda butuh custom date picker, ganti select dengan input type="date" */}
-             {dateFilter !== "all" && dateFilter !== todayRaw && (
-                <option value={dateFilter}>{dateFilter}</option>
+        {/* Filter Tanggal Kompleks */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 bg-surface p-2 rounded-xl border border-gray-200 dark:border-gray-800">
+           <div className="flex items-center gap-2 px-2 border-b sm:border-b-0 sm:border-r border-gray-200 dark:border-gray-800 pb-2 sm:pb-0">
+             <Filter className="w-4 h-4 text-gray-500" />
+             <select
+                value={filterType}
+                onChange={(e) => {
+                  const type = e.target.value as "daily" | "monthly" | "yearly" | "all";
+                  setFilterType(type);
+                  if (type === "daily") setDateFilter(todayRaw);
+                  else if (type === "monthly") setDateFilter(todayMonth);
+                  else if (type === "yearly") setDateFilter(todayYear);
+                  else setDateFilter("all");
+                }}
+                className="bg-transparent text-sm text-text-main border-none focus:ring-0 outline-none py-1 cursor-pointer"
+             >
+                <option value="daily">Harian</option>
+                <option value="monthly">Bulanan</option>
+                <option value="yearly">Tahunan</option>
+                <option value="all">Semua Waktu</option>
+             </select>
+           </div>
+
+           <div className="flex items-center gap-2 px-2">
+             <Calendar className="w-5 h-5 text-primary" />
+             {filterType === "all" ? (
+               <span className="text-sm font-medium px-2 py-1 text-gray-500">Menampilkan 500 Terakhir</span>
+             ) : (
+               <input
+                 type={filterType === "daily" ? "date" : filterType === "monthly" ? "month" : "number"}
+                 min={filterType === "yearly" ? "2020" : undefined}
+                 max={filterType === "yearly" ? "2050" : undefined}
+                 title={`Pilih ${filterType === "daily" ? "Tanggal" : filterType === "monthly" ? "Bulan" : "Tahun"}`}
+                 value={dateFilter}
+                 onChange={(e) => setDateFilter(e.target.value)}
+                 className="bg-transparent text-text-main font-medium border-none focus:ring-0 p-1 text-sm outline-none cursor-pointer w-full sm:w-auto"
+               />
              )}
-           </select>
-           {/* Fallback ke custom input jika mau fleksibel */}
-           <input 
-             type="date" 
-             title="Pilih tanggal spesifik"
-             value={dateFilter === "all" ? "" : dateFilter}
-             onChange={(e) => setDateFilter(e.target.value)}
-             className="bg-transparent text-gray-600 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded p-1 text-sm outline-none focus:border-primary w-8 h-8 cursor-pointer"
-             // Sembunyikan text bawaannya memakai css trik atau biarkan sbg icon
-           />
+           </div>
         </div>
       </div>
 

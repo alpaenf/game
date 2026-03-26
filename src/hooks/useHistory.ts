@@ -31,28 +31,34 @@ export function useHistory(dateFilter: string) {
       `)
       .order("created_at", { ascending: false });
 
-    // Terapkan filter tanggal jika tidak "all"
+    // Terapkan filter tanggal spesifik atau rentang bulanan
     if (dateFilter !== "all") {
-        // Asumsi format dateFilter "YYYY-MM-DD"
-        const startOfDay = `${dateFilter}T00:00:00.000Z`;
-        const endOfDay = `${dateFilter}T23:59:59.999Z`;
-        query = query.gte("created_at", startOfDay).lte("created_at", endOfDay);
-    } else {
-        // Optimalisasi: Jangan ambil semua di alam semesta. 
-        // default limit misal 500 transaksi paling baru kl "all"
-        query = query.limit(500);
-    }
+        if (dateFilter.length === 7) { 
+            // Format YYYY-MM (Filter Bulanan)
+            const year = parseInt(dateFilter.split('-')[0]);
+            const month = parseInt(dateFilter.split('-')[1]) - 1; // bulan di JS (0-11)
+            const startDate = new Date(Date.UTC(year, month, 1, 0, 0, 0, 0));
+            // Tambahkan 1 bulan untuk dapat tgl awal bulan berikutnya
+            const endDate = new Date(Date.UTC(year, month + 1, 1, 0, 0, 0, 0));
 
-    const { data: tx, error } = await query;
+            query = query
+                .gte("created_at", startDate.toISOString())
+                .lt("created_at", endDate.toISOString());
+        } else if (dateFilter.length === 4) {
+            // Format YYYY (Filter Tahunan)
+            const year = parseInt(dateFilter);
+            const startDate = new Date(Date.UTC(year, 0, 1, 0, 0, 0, 0));
+            const endDate = new Date(Date.UTC(year + 1, 0, 1, 0, 0, 0, 0));
 
-    if (!error && tx) {
-      setData(tx);
-      
-      // Calculate Summaries specifically only for "completed" transactions 
-      // (ignoring cancelled / active but we show active in list usually? History mostly for completed ones)
-      // Usually it's better to show only completed in history, but we fetch all to let admin see.
-      
-      const completedTx = tx.filter(t => t.status === 'completed');
+            query = query
+                .gte("created_at", startDate.toISOString())
+                .lt("created_at", endDate.toISOString());
+        } else {
+            // Asumsi format "YYYY-MM-DD" (Harian standar)
+            const startOfDay = `${dateFilter}T00:00:00.000Z`;
+            const endOfDay = `${dateFilter}T23:59:59.999Z`;
+            query = query.gte("created_at", startOfDay).lte("created_at", endOfDay);
+        }
       
       const omset = completedTx.reduce((acc, t) => acc + (t.total_price || 0), 0);
       const psTotal = completedTx.reduce((acc, t) => acc + (t.ps_total || 0), 0);
