@@ -94,35 +94,35 @@ export default async function LandingPage() {
             </div>
             
             {/* Dashboard SVG Wireframe - Glowing elements */}
-            <svg width="100%" height="auto" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full text-gray-800 block">
+            <svg width="100%" height="auto" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
                {/* Sidebar */}
-               <rect x="20" y="20" width="200" height="360" rx="12" fill="#111111" stroke="currentColor" strokeWidth="2" />
+               <rect x="20" y="20" width="200" height="360" rx="12" className="fill-white dark:fill-[#111111] stroke-gray-300 dark:stroke-gray-800" strokeWidth="2" />
                <rect x="40" y="50" width="160" height="24" rx="4" fill="#22c55e" fillOpacity="0.15" />
                <path d="M48 62 H80" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" />
-               <rect x="40" y="90" width="160" height="24" rx="4" fill="#1a1a1a" />
-               <rect x="40" y="130" width="160" height="24" rx="4" fill="#1a1a1a" />
-               <rect x="40" y="170" width="160" height="24" rx="4" fill="#1a1a1a" />
+               <rect x="40" y="90" width="160" height="24" rx="4" className="fill-gray-100 dark:fill-[#1a1a1a]" />
+               <rect x="40" y="130" width="160" height="24" rx="4" className="fill-gray-100 dark:fill-[#1a1a1a]" />
+               <rect x="40" y="170" width="160" height="24" rx="4" className="fill-gray-100 dark:fill-[#1a1a1a]" />
                
                {/* Main content grids */}
-               <rect x="250" y="20" width="220" height="150" rx="12" fill="#161616" stroke="currentColor" strokeWidth="2" />
+               <rect x="250" y="20" width="220" height="150" rx="12" className="fill-gray-50 dark:fill-[#161616] stroke-gray-300 dark:stroke-gray-800" strokeWidth="2" />
                <circle cx="360" cy="80" r="30" fill="#22c55e" fillOpacity="0.2" stroke="#22c55e" strokeWidth="4" className="animate-[pulse_3s_ease-in-out_infinite]" />
                <path d="M360 80 L360 60" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
-               <rect x="280" y="130" width="100" height="12" rx="4" fill="#333333" />
+               <rect x="280" y="130" width="100" height="12" rx="4" className="fill-gray-200 dark:fill-[#333333]" />
                
-               <rect x="490" y="20" width="220" height="150" rx="12" fill="#161616" stroke="currentColor" strokeWidth="2" />
-               <rect x="520" y="74" width="120" height="12" rx="4" fill="#333333" />
-               <rect x="520" y="130" width="80" height="12" rx="4" fill="#444444" />
+               <rect x="490" y="20" width="220" height="150" rx="12" className="fill-gray-50 dark:fill-[#161616] stroke-gray-300 dark:stroke-gray-800" strokeWidth="2" />
+               <rect x="520" y="74" width="120" height="12" rx="4" className="fill-gray-200 dark:fill-[#333333]" />
+               <rect x="520" y="130" width="80" height="12" rx="4" className="fill-gray-300 dark:fill-[#444444]" />
                
-               <rect x="730" y="20" width="220" height="150" rx="12" fill="#161616" stroke="currentColor" strokeWidth="2" />
+               <rect x="730" y="20" width="220" height="150" rx="12" className="fill-gray-50 dark:fill-[#161616] stroke-gray-300 dark:stroke-gray-800" strokeWidth="2" />
                <path d="M760 110 L800 60 L850 90 L900 40" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="animate-[pulse_4s_ease-in-out_infinite]" />
                
                {/* Transaksi Aktif list */}
-               <rect x="250" y="190" width="700" height="190" rx="12" fill="#111111" stroke="currentColor" strokeWidth="2" />
-               <rect x="280" y="220" width="150" height="16" rx="4" fill="#333333" />
-               <rect x="280" y="260" width="640" height="40" rx="6" fill="#1a1a1a" />
+               <rect x="250" y="190" width="700" height="190" rx="12" className="fill-white dark:fill-[#111111] stroke-gray-300 dark:stroke-gray-800" strokeWidth="2" />
+               <rect x="280" y="220" width="150" height="16" rx="4" className="fill-gray-200 dark:fill-[#333333]" />
+               <rect x="280" y="260" width="640" height="40" rx="6" className="fill-gray-50 dark:fill-[#1a1a1a]" />
                <circle cx="900" cy="280" r="8" fill="#22c55e" />
-               <rect x="280" y="310" width="640" height="40" rx="6" fill="#1a1a1a" />
-               <circle cx="900" cy="330" r="8" fill="#333333" />
+               <rect x="280" y="310" width="640" height="40" rx="6" className="fill-gray-50 dark:fill-[#1a1a1a]" />
+               <circle cx="900" cy="330" r="8" className="fill-gray-300 dark:fill-[#333333]" />
             </svg>
 
             {/* Overlay Gradient to make it fade cleanly */}
